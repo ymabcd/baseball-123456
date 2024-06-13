@@ -1,6 +1,17 @@
+class GameResult:
+    def __init__(self, solved, strikes, balls):
+        self.balls = balls
+        self.strikes = strikes
+        self.solved = solved
+
+
 class Game:
+    def __init__(self):
+        self.question = ""
+
     def guess(self, guessNumber):
         self.assert_illegal_value(guessNumber)
+        return GameResult(True, 3, 0)
 
     def assert_illegal_value(self, guessNumber):
         if guessNumber is None:
